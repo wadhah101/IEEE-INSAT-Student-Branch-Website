@@ -13,20 +13,27 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+
+    // cms
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: '85osrxzk46uw',
+        spaceId: env.CONTENTFUL_SPACE_ID,
+        environment: env.CONTENTFUL_ENV || 'master',
         accessToken: env.CONTENTFUL_ACCESS_TOKEN,
         downloadLocal: true,
       },
     },
+
+    // fonts
     {
       resolve: 'gatsby-plugin-typography',
       options: {
         pathToConfigModule: 'src/utils/typography',
       },
     },
+
+    // manifest.json
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

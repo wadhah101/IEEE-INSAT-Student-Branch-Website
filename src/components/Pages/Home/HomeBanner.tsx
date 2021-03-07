@@ -22,8 +22,8 @@ const HomeBanner: React.FC<IHomeBannerProps> = () => {
       <div className="relative z-20 flex items-center min-h-screen text-white ">
         <div className="container pb-10 mx-auto ">
           {/* title block */}
-          <div className="inline-block mb-6 md:mb-10 ">
-            <h1 className="text-5xl font-bold text-center text-white md:text-left md:text-8xl">
+          <div className="inline-block mb-6 md:mb-8 ">
+            <h1 className="text-5xl font-bold text-center text-white md:text-left md:text-7xl">
               IEEE INSAT
               <br />
               STUDENT BRANCH
