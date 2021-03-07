@@ -11,6 +11,11 @@ const BasePage: React.FunctionComponent<React.HTMLAttributes<any>> = ({
       <title>INSAT Student Branch</title>
       <meta name="description" content="Nested component" />
       <html lang="en" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="../../../assets/logos/sb/favicon.png"
+      />
     </Helmet>
 
     {children}

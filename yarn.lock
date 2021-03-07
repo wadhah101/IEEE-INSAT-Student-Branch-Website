@@ -4098,6 +4098,11 @@ clone-response@1.0.2, clone-response@^1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
+
 coa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -6809,6 +6814,17 @@ gatsby-plugin-image@^1.0.0:
     gatsby-core-utils "^2.0.0"
     objectFitPolyfill "^2.3.0"
     prop-types "^15.7.2"
+
+gatsby-plugin-manifest@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-3.0.0.tgz#4d5a7933bd2c539f9d35307812c4903e4c34b107"
+  integrity sha512-xmnppsXR0+CTQZhEmvcrbbV6rvOgO5ybE6Ywwv0bosSJxML3oBoo+kC8HCwK097Ppofgd1inSwNbJ5FB8wdNbQ==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    gatsby-core-utils "^2.0.0"
+    gatsby-plugin-utils "^1.0.0"
+    semver "^7.3.2"
+    sharp "^0.27.0"
 
 gatsby-plugin-page-creator@^3.0.0:
   version "3.0.0"
@@ -14107,6 +14123,14 @@ typography-theme-grand-view@^0.16.19:
   integrity sha512-D7JsfJ3r29aCERgOD2XhIdwAxOHroBEKzpGwm7nznF9EyO1kioC8+tjROVsSU5YRYvwMqIPdXtmd3h3NLHEe7Q==
   dependencies:
     compass-vertical-rhythm "^1.2.1"
+    gray-percentage "^2.0.0"
+    typography-breakpoint-constants "^0.16.19"
+
+typography-theme-stern-grove@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/typography-theme-stern-grove/-/typography-theme-stern-grove-0.16.19.tgz#bedbe6c4d74a419cca069cb9b1415cf05dc9f624"
+  integrity sha512-T3j8xEmpQJ840iviipEDDW0cT7bx+/KCswQ9CI3Dgzz4GEZAnLhOrSnJBIPgv4uG/HSd0hrD99SDgXKVQpV5qg==
+  dependencies:
     gray-percentage "^2.0.0"
     typography-breakpoint-constants "^0.16.19"
 

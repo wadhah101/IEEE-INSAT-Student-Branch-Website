@@ -1,7 +1,9 @@
 import Typography from 'typography';
-import fairyGatesTheme from 'typography-theme-fairy-gates';
 
-const typography = new Typography(fairyGatesTheme);
+const typography = new Typography({
+  headerFontFamily: [`Raleway`, `sans-serif`],
+  bodyFontFamily: [`open-sans`, `serif`],
+});
 
 // Export helper functions
 export const { scale, rhythm, options } = typography;

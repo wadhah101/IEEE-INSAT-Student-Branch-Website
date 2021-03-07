@@ -23,9 +23,11 @@
   },
   "dependencies": {
     "babel-preset-gatsby": "^1.0.0",
+    "clsx": "^1.1.1",
     "dotenv": "^8.2.0",
     "gatsby": "3.0.2",
     "gatsby-plugin-image": "^1.0.0",
+    "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-react-helmet": "^4.0.0",
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-sitemap": "^3.0.0",
@@ -42,7 +44,8 @@
     "tsconfig-paths-webpack-plugin": "3.3.0",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19",
-    "typography-theme-grand-view": "^0.16.19"
+    "typography-theme-grand-view": "^0.16.19",
+    "typography-theme-stern-grove": "^0.16.19"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.1",
