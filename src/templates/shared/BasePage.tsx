@@ -5,7 +5,7 @@ const BasePage: React.FunctionComponent<React.HTMLAttributes<any>> = ({
   children,
   ...props
 }) => (
-  <div {...props}>
+  <main {...props}>
     <Helmet>
       <meta charSet="utf-8" />
       <title>INSAT Student Branch</title>
@@ -14,7 +14,7 @@ const BasePage: React.FunctionComponent<React.HTMLAttributes<any>> = ({
     </Helmet>
 
     {children}
-  </div>
+  </main>
 );
 
 export default BasePage;

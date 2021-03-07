@@ -3,7 +3,7 @@ import { graphql, PageProps } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import BasePage from '@/templates/shared/BasePage';
 
-const Home: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
+const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   const blogs = data.allContentfulBlog.edges.map((e) => e.node);
   return (
     <BasePage>
@@ -49,4 +49,4 @@ export const query = graphql`
   }
 `;
 
-export default Home;
+export default HomePage;
