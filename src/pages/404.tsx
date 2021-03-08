@@ -1,11 +1,11 @@
 import React from 'react';
 import { PageProps } from 'gatsby';
-import BasePage from '@/templates/shared/BasePage';
+import Layout from '@/templates/shared/Layout';
 
 const NotFoundPage: React.FC<PageProps> = () => (
-  <BasePage>
+  <Layout>
     <p>Sorry, page not found!</p>
-  </BasePage>
+  </Layout>
 );
 
 export default NotFoundPage;

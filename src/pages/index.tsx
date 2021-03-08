@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import BasePage from '@/templates/shared/BasePage';
+import Layout from '@/templates/shared/Layout';
 import HomeBanner from '@/components/Pages/Home/HomeBanner';
 
 const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = () => {
   return (
-    <BasePage>
+    <Layout>
       <HomeBanner />
       <div className="px-10 py-10">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea asperiores
@@ -31,7 +31,7 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = () => {
         non totam commodi repellendus, quo aperiam dolore deleniti quas
         provident itaque hic nesciunt. Veritatis, possimus!
       </div>
-    </BasePage>
+    </Layout>
   );
 };
 
