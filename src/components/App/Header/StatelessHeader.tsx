@@ -4,20 +4,22 @@ import React from 'react';
 import HeaderLogo from './HeaderLogo';
 
 export interface IStatelessHeaderProps {
-  isTranspartent?: boolean;
+  isTransparent?: boolean;
   isFixed?: boolean;
+  isBig?: boolean;
 }
 
 const navLinks = [`home`, `blog`, `contact`, `about`, `activites`, `awards`];
 
 const StatelessHeader: React.FC<IStatelessHeaderProps> = (props) => {
-  const { isFixed, isTranspartent } = props;
+  const { isFixed, isTransparent, isBig } = props;
   return (
     <header
       className={clsx(
         ` flex transition-all duration-300 ease-in-out items-center  top-0 left-0 z-50 w-full  `,
-        isTranspartent ? `bg-transparent ` : `bg-white shadow `,
-        isFixed ? `fixed h-36` : `sticky  h-20`,
+        isTransparent ? `bg-transparent ` : `bg-white shadow `,
+        isFixed ? `fixed` : `sticky`,
+        isBig ? `h-36` : `h-20`,
       )}
     >
       <div className="flex items-center w-full h-full c-container">
@@ -29,10 +31,10 @@ const StatelessHeader: React.FC<IStatelessHeaderProps> = (props) => {
                 <Link
                   partiallyActive
                   activeClassName={
-                    isTranspartent ? `text-opacity-75` : `text-sb-blue-main-500`
+                    isTransparent ? `text-opacity-75` : `text-sb-blue-main-500`
                   }
                   className={clsx(
-                    isTranspartent
+                    isTransparent
                       ? `text-white hover:text-opacity-75`
                       : `text-black text-opacity-75 hover:text-sb-blue-main-500 hover:text-opacity-100`,
                     `px-3 py-2 text-sm font-semibold tracking-wider uppercase transition-colors duration-300 rounded  `,

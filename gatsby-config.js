@@ -46,5 +46,11 @@ module.exports = {
         display: 'standalone',
       },
     },
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/layout.tsx'),
+      },
+    },
   ],
 };

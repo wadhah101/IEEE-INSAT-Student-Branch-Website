@@ -1,6 +1,6 @@
-import Layout from '@/templates/shared/Layout';
+import Layout from '@/components/layout';
 import * as React from 'react';
 
-const ContactPage: React.FunctionComponent = () => <Layout>enter</Layout>;
+const ContactPage: React.FunctionComponent = () => <div>enter</div>;
 
 export default ContactPage;

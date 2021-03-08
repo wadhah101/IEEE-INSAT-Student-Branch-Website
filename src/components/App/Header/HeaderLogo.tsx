@@ -5,10 +5,10 @@ import { IStatelessHeaderProps } from './StatelessHeader';
 
 const HeaderLogoHeight = 50;
 
-const HeaderLogo: React.FC<IStatelessHeaderProps> = ({ isTranspartent }) => {
+const HeaderLogo: React.FC<IStatelessHeaderProps> = ({ isTransparent }) => {
   return (
     <Link className="flex" to="/">
-      {isTranspartent ? (
+      {isTransparent ? (
         <StaticImage
           alt="App Logo"
           src="../../../../assets/logos/sb/sb-white.png"

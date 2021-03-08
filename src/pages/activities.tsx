@@ -1,6 +1,6 @@
-import Layout from '@/templates/shared/Layout';
+import Layout from '@/components/layout';
 import * as React from 'react';
 
-const ActivitiesPage: React.FunctionComponent = () => <Layout>enter</Layout>;
+const ActivitiesPage: React.FunctionComponent = () => <div>enter</div>;
 
 export default ActivitiesPage;
