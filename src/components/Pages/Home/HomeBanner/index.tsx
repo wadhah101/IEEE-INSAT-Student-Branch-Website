@@ -43,7 +43,7 @@ const HomeBanner: React.FC<IHomeBannerProps> = () => {
             </div>
           </div>
           <div className="flex flex-col-reverse pb-4 md:pb-6">
-            <div className="flex justify-center md:flex-row-reverse">
+            <div className="flex justify-center md:justify-start md:flex-row-reverse">
               <HomeBannerMediaIcons />
             </div>
           </div>
