@@ -6,7 +6,7 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = () => {
   return (
     <div>
       <HomeBanner />
-      <div className="px-10 py-10">
+      <div className="h-screen px-10 py-10">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea asperiores
         quibusdam qui, accusantium voluptates recusandae doloribus culpa aperiam
         magnam esse, repellat totam dicta ducimus quod doloremque eius beatae

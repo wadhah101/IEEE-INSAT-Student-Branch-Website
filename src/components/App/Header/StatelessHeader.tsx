@@ -24,7 +24,7 @@ const StatelessHeader: React.FC<IStatelessHeaderProps & HeaderData> = ({
     <header
       className={clsx(
         ` flex transition-all duration-300 ease-in-out items-center  top-0 left-0 z-50 w-full  `,
-        isTransparent ? `bg-transparent ` : `bg-white shadow `,
+        isTransparent ? `bg-transparent ` : `bg-white bg-opacity-95 shadow `,
         isFixed ? `fixed` : `sticky`,
         isBig ? `h-36` : `h-20`,
       )}
