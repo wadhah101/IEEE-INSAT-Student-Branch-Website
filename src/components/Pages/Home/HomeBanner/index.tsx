@@ -26,7 +26,7 @@ const HomeBanner: React.FC<IHomeBannerProps> = () => {
           <HomeBannerWriting />
 
           {/* button block */}
-          <div className="mt-8 ">
+          <div className="mt-6 md:mt-8 ">
             <div className="flex-grow mb-2 ">
               <HomeBannerButtonBlock />
             </div>

@@ -26,12 +26,6 @@ module.exports = {
     },
 
     // fonts
-    {
-      resolve: 'gatsby-plugin-typography',
-      options: {
-        pathToConfigModule: 'src/utils/typography',
-      },
-    },
 
     // manifest.json
     {

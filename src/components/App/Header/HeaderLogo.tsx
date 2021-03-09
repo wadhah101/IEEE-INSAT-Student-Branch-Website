@@ -6,6 +6,7 @@ import { IStatelessHeaderProps } from './StatelessHeader';
 const HeaderLogoHeight = 50;
 
 const HeaderLogo: React.FC<IStatelessHeaderProps> = ({ isTransparent }) => {
+  // TODO fix sb.webp optimzations
   return (
     <Link className="flex" to="/">
       {isTransparent ? (

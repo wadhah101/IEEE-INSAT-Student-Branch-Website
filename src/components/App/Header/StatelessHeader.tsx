@@ -1,6 +1,8 @@
+/* eslint-disable object-curly-newline */
 import clsx from 'clsx';
-import { Link } from 'gatsby';
 import React from 'react';
+import { HeaderLinkData } from './Header.data';
+import HeaderLink from './HeaderLink';
 import HeaderLogo from './HeaderLogo';
 
 export interface IStatelessHeaderProps {
@@ -9,9 +11,14 @@ export interface IStatelessHeaderProps {
   isBig?: boolean;
 }
 
-const navLinks = [`home`, `blog`, `contact`, `about`, `activites`, `awards`];
+interface HeaderData {
+  navLinks: HeaderLinkData[];
+}
 
-const StatelessHeader: React.FC<IStatelessHeaderProps> = (props) => {
+const StatelessHeader: React.FC<IStatelessHeaderProps & HeaderData> = ({
+  navLinks,
+  ...props
+}) => {
   const { isFixed, isTransparent, isBig } = props;
   return (
     <header
@@ -24,25 +31,11 @@ const StatelessHeader: React.FC<IStatelessHeaderProps> = (props) => {
     >
       <div className="flex items-center w-full h-full c-container">
         <HeaderLogo {...props} />
-        <div className="flex flex-row-reverse flex-grow">
+        <div className="flex-row-reverse flex-grow hidden md:flex">
           <ul className="flex items-center">
             {navLinks.map((e) => (
-              <li className="mb-0" key={e}>
-                <Link
-                  partiallyActive
-                  activeClassName={
-                    isTransparent ? `text-opacity-75` : `text-sb-blue-main-500`
-                  }
-                  className={clsx(
-                    isTransparent
-                      ? `text-white hover:text-opacity-75`
-                      : `text-black text-opacity-75 hover:text-sb-blue-main-500 hover:text-opacity-100`,
-                    `px-3 py-2 text-sm font-semibold tracking-wider uppercase transition-colors duration-300 rounded  `,
-                  )}
-                  to={`/${e}`}
-                >
-                  {e}
-                </Link>
+              <li className="mb-0" key={e.link.to}>
+                <HeaderLink {...props} data={e} />
               </li>
             ))}
           </ul>

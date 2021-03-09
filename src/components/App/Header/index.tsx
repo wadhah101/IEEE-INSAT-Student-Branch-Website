@@ -2,6 +2,7 @@ import * as React from 'react';
 // eslint-disable-next-line import/no-unresolved
 import { useLocation } from '@reach/router';
 import StatelessHeader from './StatelessHeader';
+import { navLinks } from './Header.data';
 
 interface IAppHeaderProps {}
 
@@ -55,6 +56,7 @@ const AppHeader: React.FunctionComponent<IAppHeaderProps> = () => {
       isBig={isBig}
       isTransparent={isTransparent}
       isFixed={isFixed}
+      navLinks={navLinks}
     />
   );
 };
