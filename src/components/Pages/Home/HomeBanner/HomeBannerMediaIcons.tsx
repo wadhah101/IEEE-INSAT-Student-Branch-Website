@@ -17,9 +17,21 @@ const SocialMediaLinkFactory = (
 ): SocialMediaLink => ({ title, href, Icon });
 
 const links = [
-  SocialMediaLinkFactory(`facebook`, ``, FaFacebook),
-  SocialMediaLinkFactory(`Instagram`, ``, FaInstagram),
-  SocialMediaLinkFactory(`linkedin`, ``, FaLinkedin),
+  SocialMediaLinkFactory(
+    `facebook`,
+    `https://www.facebook.com/IeeeInsatStudentBranch/`,
+    FaFacebook,
+  ),
+  SocialMediaLinkFactory(
+    `Instagram`,
+    `https://www.instagram.com/ieee.insat.sb/`,
+    FaInstagram,
+  ),
+  SocialMediaLinkFactory(
+    `linkedin`,
+    `https://www.linkedin.com/school/national-institute-of-applied-science-and-technology/`,
+    FaLinkedin,
+  ),
 ];
 
 const HomeBannerMediaIcons: React.FC<IHomeBannerMediaIconsProps> = () => {
