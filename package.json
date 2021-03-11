@@ -34,7 +34,6 @@
     "gatsby-plugin-sharp": "^3.0.0",
     "gatsby-plugin-sitemap": "^3.0.0",
     "gatsby-plugin-typegen": "^2.2.4",
-    "gatsby-plugin-typography": "^3.0.0",
     "gatsby-source-contentful": "^5.0.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-source-strapi": "^0.0.12",
@@ -44,14 +43,9 @@
     "react-dom": "17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
-    "react-typography": "^0.16.19",
     "react-use": "^17.1.1",
     "tailwindcss-fluid-container": "^4.0.0",
-    "tsconfig-paths-webpack-plugin": "3.3.0",
-    "typography": "^0.16.19",
-    "typography-theme-fairy-gates": "^0.16.19",
-    "typography-theme-grand-view": "^0.16.19",
-    "typography-theme-stern-grove": "^0.16.19"
+    "tsconfig-paths-webpack-plugin": "3.3.0"
   },
   "devDependencies": {
     "@commitlint/cli": "12.0.1",
