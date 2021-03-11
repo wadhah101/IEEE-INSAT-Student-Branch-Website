@@ -9,6 +9,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
+// eslint-disable-next-line no-unused-vars
 const createBlogPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
@@ -33,6 +34,6 @@ const createBlogPages = async ({ graphql, actions }) => {
   });
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  await createBlogPages({ graphql, actions });
-};
+// exports.createPages = async ({ graphql, actions }) => {
+//   // await createBlogPages({ graphql, actions });
+// };

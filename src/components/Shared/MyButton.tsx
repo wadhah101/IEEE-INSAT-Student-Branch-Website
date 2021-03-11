@@ -2,32 +2,46 @@
 /* eslint-disable object-curly-newline */
 import clsx from 'clsx';
 import React from 'react';
+import cond from 'lodash.cond';
+
+// TODO define button states and transitions
+
+const shared = `px-8 py-3 font-semibold tracking-wider border-2 transition-colors duration-300 ease-in-out`;
+
+const emptyColorToFilledColor = clsx(
+  shared,
+  `border-sb-blue-main-500 text-sb-blue-main-500 hover:bg-sb-blue-main-500 hover:text-white`,
+);
+
+const emptyToFilledWhite = clsx(
+  shared,
+  `text-white border-white hover:bg-white hover:text-black hover:text-opacity-80 `,
+);
+
+const filledColorToBgWhite = clsx(
+  shared,
+  ` bg-sb-blue-main-500 text-white border-sb-blue-main-500 hover:bg-white  hover:text-black hover:text-opacity-80 hover:border-white`,
+);
 
 interface IBannerButtonProps {
-  hollow?: boolean;
+  empty?: boolean;
   colored?: boolean;
+  initialColor?: boolean;
 }
 
 const MyButton: React.FC<
   IBannerButtonProps & React.ButtonHTMLAttributes<any>
-> = ({ colored, hollow, children, className, ...props }) => {
+> = ({ colored, empty, children, className, ...props }) => {
   return (
     <button
       {...{ props }}
       type="button"
       className={clsx(
-        `px-8 py-2.5 font-semibold tracking-wider border-2 transition-colors duration-300 ease-in-out`,
-        hollow
-          ? [
-              `text-white border-white` && colored
-                ? `hover:text-sb-blue-main-500  hover:border-sb-blue-main-500 `
-                : `hover:text-black hover:text-opacity-80 hover:bg-white `,
-            ]
-          : [
-              colored
-                ? `bg-sb-blue-main-500 border-sb-blue-main-500 text-white hover:border-white  hover:bg-white hover:text-black hover:text-opacity-80`
-                : `bg-white border-white hover:bg-sb-blue-main-500  hover:border-sb-blue-main-500 hover:text-white text-black text-opacity-80`,
-            ],
+        cond([
+          [() => empty && colored, () => emptyColorToFilledColor],
+          [() => empty, () => emptyToFilledWhite],
+          [() => true, () => filledColorToBgWhite],
+        ])(),
         className,
       )}
     >

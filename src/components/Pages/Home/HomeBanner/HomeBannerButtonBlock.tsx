@@ -15,7 +15,7 @@ const HomeBannerButtonBlock: React.FC<IHomeBannerButtonBlockProps> = () => {
         </Link>
 
         <Link title="Contact Page" to="/contact">
-          <MyButton className="w-full" hollow>
+          <MyButton className="w-full" empty>
             CONTACT US
           </MyButton>
         </Link>

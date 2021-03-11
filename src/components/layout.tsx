@@ -2,6 +2,9 @@ import AppHeader from '@/components/App/Header';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 
+const description = `
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus recusandae non nisi facilis explicabo sequi facere assumenda cumque nulla eveniet tempora expedita, inventore eum sint ipsam voluptatem ut odio fugit?`;
+
 interface LayoutProps {
   uri: string;
   path: string;
@@ -12,10 +15,7 @@ interface LayoutProps {
   };
 }
 
-const Layout: React.FunctionComponent<LayoutProps> = ({
-  children,
-  ...props
-}) => {
+const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div>
       <AppHeader />
@@ -23,15 +23,9 @@ const Layout: React.FunctionComponent<LayoutProps> = ({
         <Helmet>
           <meta charSet="utf-8" />
           <title>INSAT Student Branch</title>
-          <meta name="description" content="Nested component" />
+          <meta name="description" content={description} />
           <html lang="en" />
-          <link
-            rel="icon"
-            type="image/png"
-            href="../../../assets/logos/sb/favicon.png"
-          />
         </Helmet>
-
         {children}
       </main>
     </div>
