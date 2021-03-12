@@ -11,7 +11,7 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
       <div className="relative flex cursor-pointer md:col-span-7 ">
         <StaticImage
           className="relative shadow-xl "
-          placeholder="blurred"
+          placeholder="dominantColor"
           src="https://source.unsplash.com/random/1600x1100"
           alt="HomeVideo"
           // height={600 * (11 / 16)}
