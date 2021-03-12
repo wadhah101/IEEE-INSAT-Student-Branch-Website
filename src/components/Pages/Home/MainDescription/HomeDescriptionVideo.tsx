@@ -24,12 +24,12 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
         <h2 className="text-2xl font-medium text-black md:text-3xl text-opacity-80">
           Lorem ipsum dolor sit amel
         </h2>
-        <p className="mt-2 font-medium text-black md:mt-4 text-opacity-60">
+        <p className="mt-1 text-black md:mt-4 text-opacity-60">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
           eveniet dignissimos beatae quaerat rerum molestiae, similique
           temporibus at dolor nihil
         </p>
-        <div className="pb-2 mt-3 text-sm md:mt-6">
+        <div className="pb-2 mt-2 text-sm md:mt-6">
           <MyButton empty colored>
             WATCH ME
           </MyButton>

@@ -10,6 +10,8 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = () => {
       <div className="py-12 md:py-24 c-container">
         <HomeMainDescription />
       </div>
+      {/* TODO add 3 activities showcase full page width with description */}
+
       <div className="h-screen" />
     </div>
   );

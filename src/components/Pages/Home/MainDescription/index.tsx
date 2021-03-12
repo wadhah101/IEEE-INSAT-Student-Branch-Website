@@ -9,7 +9,7 @@ const HomeMainDescription: React.FC = () => {
       {/* TODO add writing */}
       <div className="mt-10 md:mt-20">
         <HomeDescriptionVideo />
-        {/* TODO  */}
+        {/* TODO  add IEEE mission */}
       </div>
     </div>
   );
