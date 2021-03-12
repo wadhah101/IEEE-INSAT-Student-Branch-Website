@@ -14,7 +14,6 @@ const MainDescriptionWriting: React.FC<IMainDescriptionWritingProps> = () => {
         elit. Velit, enim illo eius facilis Lorem ipsum dolor, sit amet
         consectetur adipisicing elit. Velit, enim illo eius facilis
       </p>
-      {/* TODO Add statistics here */}
     </div>
   );
 };

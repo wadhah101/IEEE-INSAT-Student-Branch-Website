@@ -33,10 +33,6 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
           <MyButton empty colored>
             WATCH ME
           </MyButton>
-
-          {/* <MyButton hollow colored>
-            WATCH ME
-          </MyButton> */}
         </div>
       </figcaption>
     </figure>
