@@ -8,7 +8,7 @@ interface IHomeDescriptionVideoProps {}
 const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
   return (
     <figure className="grid gap-x-24 gap-y-4 md:grid-cols-12">
-      <div className="relative flex cursor-pointer md:col-span-7 ">
+      <div className="relative flex md:col-span-7 ">
         <StaticImage
           className="relative shadow-xl "
           placeholder="dominantColor"
@@ -16,8 +16,8 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
           alt="HomeVideo"
           // height={600 * (11 / 16)}
         />
-        <div className="absolute top-0 left-0 grid w-full h-full text-6xl text-white transition-colors duration-300 ease-in-out bg-black bg-opacity-25 hover:text-opacity-50 place-items-center">
-          <FiPlay />
+        <div className="absolute top-0 left-0 grid w-full h-full text-6xl transition-colors duration-300 ease-in-out bg-black bg-opacity-25 cursor-pointer place-items-center">
+          <FiPlay className="text-white transition-colors duration-300 ease-in-out hover:opacity-50" />
         </div>
       </div>
       <figcaption className="flex flex-col justify-center md:col-span-5">

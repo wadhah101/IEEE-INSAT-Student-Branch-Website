@@ -25,24 +25,19 @@ const stats = [
 
 const MainDescriptionStatistics: React.FC<IMainDescriptionStatisticsProps> = () => {
   return (
-    <div className="grid w-full text-left md:grid-cols-3 gap-x-24">
+    <div className="grid gap-8 text-left md:justify-items-center text-sb-blue-main-500 md:gap-0 md:grid-cols-3">
       {stats.map(({ description, Icon, count }) => (
-        <div
-          className="px-6 pb-3 mt-4 md:mt-0 border-sb-blue-main-500"
-          key={description}
-        >
-          <div className="flex items-center text-sb-blue-main-500">
-            <div className="text-7xl">
-              {/* <Icon /> */}
-              <Icon />
-            </div>
+        <div className="flex items-center " key={description}>
+          <div className="text-6xl">
+            {/* <Icon /> */}
+            <Icon />
+          </div>
 
-            <div className="ml-4 ">
-              <p className="text-5xl font-black ">{`+${count}`}</p>
-              <p className="italic leading-3 tracking-wide text-right uppercase ">
-                {description}
-              </p>
-            </div>
+          <div className="ml-10 md:ml-4">
+            <p className="text-5xl font-black ">{`+${count}`}</p>
+            <p className="italic leading-3 tracking-wide text-right uppercase ">
+              {description}
+            </p>
           </div>
         </div>
       ))}

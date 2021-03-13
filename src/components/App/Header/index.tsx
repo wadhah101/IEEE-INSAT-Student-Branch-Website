@@ -24,11 +24,12 @@ const AppHeader: React.FunctionComponent<IAppHeaderProps> = () => {
     }
 
     const threshold = 100;
+    const initState = threshold > window.scrollY;
     let lastKnownScrollPosition = 0;
     let ticking = false;
 
-    setIsTransparent(true);
-    setIsBig(true);
+    setIsTransparent(initState);
+    setIsBig(initState);
 
     function doSomething(scrollPos: number) {
       setIsTransparent(scrollPos < threshold);
