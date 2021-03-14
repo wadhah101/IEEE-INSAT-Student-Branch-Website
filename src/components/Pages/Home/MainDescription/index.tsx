@@ -7,11 +7,12 @@ const HomeMainDescription: React.FC = () => {
   return (
     <div>
       <MainDescriptionWriting />
-      <div className="mx-auto mt-8 md:w-3/4 md:mt-16">
+
+      <div className="mx-auto mt-10 md:w-3/4 md:mt-20">
         <MainDescriptionStatistics />
       </div>
 
-      <div className="mt-8 md:mt-16">
+      <div className="mt-10 md:mt-20">
         <HomeDescriptionVideo />
       </div>
     </div>

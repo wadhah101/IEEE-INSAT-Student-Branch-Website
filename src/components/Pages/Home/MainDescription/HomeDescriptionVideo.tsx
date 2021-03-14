@@ -6,6 +6,7 @@ import { FiPlay } from 'react-icons/fi';
 interface IHomeDescriptionVideoProps {}
 
 const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
+  const openVideoModal = () => null;
   return (
     <figure className="grid gap-x-24 gap-y-4 md:grid-cols-12">
       <div className="relative flex md:col-span-7 ">
@@ -14,10 +15,12 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
           placeholder="dominantColor"
           src="https://source.unsplash.com/random/1600x1100"
           alt="HomeVideo"
-          // height={600 * (11 / 16)}
         />
-        <div className="absolute top-0 left-0 grid w-full h-full text-6xl transition-colors duration-300 ease-in-out bg-black bg-opacity-25 cursor-pointer place-items-center">
-          <FiPlay className="text-white transition-colors duration-300 ease-in-out hover:opacity-50" />
+        <div className="absolute top-0 left-0 grid w-full h-full text-6xl bg-black bg-opacity-25 place-items-center">
+          <FiPlay
+            onClick={openVideoModal}
+            className="text-white transition-opacity duration-300 ease-in-out cursor-pointer hover:opacity-50"
+          />
         </div>
       </div>
       <figcaption className="flex flex-col justify-center md:col-span-5">
