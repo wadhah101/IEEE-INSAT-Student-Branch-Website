@@ -12,15 +12,8 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
       <div className="py-12 md:py-24 c-container">
         <HomeMainDescription />
       </div>
-
-      <div className="bg-sb-gray-200">
-        <div className="c-container">
-          <ChapterGrid chapters={chapters} />
-        </div>
-      </div>
-
+      <ChapterGrid chapters={chapters} />
       {/* TODO add 3 activities showcase full page width with description */}
-
       <div className="h-screen" />
     </div>
   );
@@ -28,6 +21,25 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
 
 export const query = graphql`
   query MyQuery {
+    # allContentfulActivity {
+    #   edges {
+    #     node {
+    #       id
+    #       pictures {
+    #         id
+    #         localFile {
+    #           childImageSharp {
+    #             gatsbyImageData(
+    #               width: 800
+    #               placeholder: BLURRED
+    #               formats: [AUTO, WEBP]
+    #             )
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    # }
     allContentfulChapter {
       edges {
         node {
