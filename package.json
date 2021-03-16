@@ -27,6 +27,7 @@
     "clsx": "^1.1.1",
     "dotenv": "^8.2.0",
     "gatsby": "3.0.4",
+    "gatsby-plugin-gatsby-cloud": "^2.1.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-layout": "^2.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
