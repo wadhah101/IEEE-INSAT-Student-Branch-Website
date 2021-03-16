@@ -13,15 +13,28 @@ const ChapterGrid: React.FC<IindexProps> = ({ chapters }) => {
     // eslint-disable-next-line implicit-arrow-linebreak
     chapters.find((e1) => e1.acronym === e),
   );
-  return (
-    <div className="py-16 bg-sb-blue-main-500">
-      {/* <h2 className="mb-12 text-5xl font-bold tracking-wider text-center text-white ">
-        OUR CHAPTERS
-      </h2> */}
+  const wie = chapters.find((e1) => e1.acronym === `WIE`);
 
+  return (
+    <div className="py-20 bg-sb-blue-main-500">
+      <h2 className="mb-4 text-5xl font-bold leading-tight text-center text-white">
+        OUR AFFINITY
+        <br />
+        GROUP
+      </h2>
+      <div className="grid items-center grid-cols-3 gap-x-4 gap-y-4 justify-items-center c-container">
+        <div />
+        <div className="px-4">
+          <ChapterElement data={wie} />
+        </div>
+      </div>
+
+      <h2 className="mt-8 mb-8 text-5xl font-bold tracking-wider text-center text-white">
+        OUR CHAPTERS
+      </h2>
       <div
         style={{ gridAutoRows: `1fr` }}
-        className="grid items-center grid-cols-3 gap-x-16 gap-y-16 justify-items-center c-container "
+        className="grid items-center grid-cols-3 gap-x-4 gap-y-4 justify-items-center c-container "
       >
         {data.map((e) => (
           // eslint-disable-next-line react/no-array-index-key

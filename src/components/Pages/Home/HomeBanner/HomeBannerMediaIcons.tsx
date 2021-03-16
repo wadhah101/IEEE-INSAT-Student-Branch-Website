@@ -1,20 +1,8 @@
 import React from 'react';
-import { IconType } from 'react-icons';
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { SocialMediaLinkFactory } from '../../types/SocialMediaLink';
 
 interface IHomeBannerMediaIconsProps {}
-
-interface SocialMediaLink {
-  title: string;
-  href: string;
-  Icon: IconType;
-}
-
-const SocialMediaLinkFactory = (
-  title: string,
-  href: string,
-  Icon: IconType,
-): SocialMediaLink => ({ title, href, Icon });
 
 const links = [
   SocialMediaLinkFactory(
