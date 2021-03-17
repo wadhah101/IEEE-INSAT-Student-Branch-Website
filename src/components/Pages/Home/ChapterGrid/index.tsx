@@ -29,7 +29,7 @@ const ChapterGrid: React.FC<IindexProps> = ({ chapters }) => {
         </div>
       </div>
 
-      <h2 className="mt-8 mb-8 text-5xl font-bold tracking-wider text-center text-white">
+      <h2 className="mt-8 mb-8 text-5xl font-bold text-center text-white">
         OUR CHAPTERS
       </h2>
       <div

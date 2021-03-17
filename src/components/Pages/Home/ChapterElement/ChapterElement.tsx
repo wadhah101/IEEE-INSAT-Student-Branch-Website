@@ -24,12 +24,13 @@ const ChapterElement: React.FC<IChapterElementProps> = ({ data }) => {
   return (
     <div
       className={clsx(
-        `flex h-full relative rounded items-center px-12 pt-10 pb-14 duration-300 `,
+        `flex h-full relative rounded items-center px-12 pt-8 pb-16 duration-300 `,
         { 'bg-white': isHovering },
       )}
       onMouseEnter={() => setIsHoveringMulti((e) => ({ ...e, out: true }))}
       onMouseLeave={() => setIsHoveringMulti((e) => ({ ...e, out: false }))}
     >
+      {/* social media */}
       <div
         style={{ color: data.accent }}
         className={clsx(
