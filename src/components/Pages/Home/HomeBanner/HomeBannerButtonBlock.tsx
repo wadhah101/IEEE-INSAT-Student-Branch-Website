@@ -7,7 +7,7 @@ interface IHomeBannerButtonBlockProps {}
 const HomeBannerButtonBlock: React.FC<IHomeBannerButtonBlockProps> = () => {
   return (
     <div>
-      <div className="grid items-start gap-4 text-sm md:inline-grid md:justify-start md:grid-cols-2">
+      <div className="grid items-start gap-2 text-sm md:gap-4 md:inline-grid md:justify-start md:grid-cols-2">
         <Link title="Join Form" to="/join">
           <MyButton colored className="w-full">
             JOIN US
