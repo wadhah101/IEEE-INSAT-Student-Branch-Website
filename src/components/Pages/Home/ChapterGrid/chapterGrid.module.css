@@ -1,0 +1,5 @@
+/* style={{ gridAutoRows: `1fr` }} */
+
+.gridAutoRaw {
+  grid-auto-rows: 1fr;
+}

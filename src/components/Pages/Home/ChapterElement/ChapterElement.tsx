@@ -24,8 +24,8 @@ const ChapterElement: React.FC<IChapterElementProps> = ({ data }) => {
   return (
     <div
       className={clsx(
-        `flex h-full relative rounded items-center px-12 pt-8 pb-16 duration-300 `,
-        { 'bg-white': isHovering },
+        `flex justify-self-stretch  h-full w-full relative rounded md:bg-transparent bg-white items-center pt-4 pb-12  md:px-12 md:pt-6 md:pb-16 px-4 md:duration-300 `,
+        [isHovering ? `md:bg-white` : `md:bg-transparent`],
       )}
       onMouseEnter={() => setIsHoveringMulti((e) => ({ ...e, out: true }))}
       onMouseLeave={() => setIsHoveringMulti((e) => ({ ...e, out: false }))}
@@ -34,8 +34,10 @@ const ChapterElement: React.FC<IChapterElementProps> = ({ data }) => {
       <div
         style={{ color: data.accent }}
         className={clsx(
-          `absolute bottom-0 left-0 flex duration-300 items-center justify-center w-full h-16 gap-4 text-3xl text-opacity-95 transform`,
-          isHovering ? `opacity-100 translate-y-0` : `opacity-0 translate-y-8`,
+          `absolute bottom-0 left-0 flex duration-300 items-center justify-center w-full h-12  md:h-16 md:gap-4 gap-3 text-2xl md:text-3xl text-opacity-95 transform`,
+          isHovering
+            ? `md:opacity-100 md:translate-y-0`
+            : `md:opacity-0 md:translate-y-8`,
         )}
       >
         {links.map(({ Icon, href, title }) => (
@@ -50,7 +52,7 @@ const ChapterElement: React.FC<IChapterElementProps> = ({ data }) => {
           </a>
         ))}
       </div>
-      <div className="relative ">
+      <div className="relative">
         <div
           className={clsx(
             isHovering ? `opacity-0` : `opacity-100`,
@@ -65,8 +67,8 @@ const ChapterElement: React.FC<IChapterElementProps> = ({ data }) => {
 
         <div
           className={clsx(
-            `absolute duration-300 ease-in-out transition-opacity top-0 left-0 z-10 w-full h-full `,
-            [isHovering ? `opacity-100` : ` opacity-0`],
+            `absolute md:duration-300 md:ease-in-out md:transition-opacity top-0 left-0 h-full z-10 w-full  `,
+            [isHovering ? `md:opacity-100` : ` md:opacity-0`],
           )}
         >
           <GatsbyImage
