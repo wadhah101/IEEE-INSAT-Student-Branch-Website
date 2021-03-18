@@ -1,6 +1,5 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import clsx from 'clsx';
 import HomeBannerButtonBlock from './HomeBannerButtonBlock';
 import HomeBannerWriting from './HomeBannerWriting';
 import HomeBannerMediaIcons from './HomeBannerMediaIcons';
