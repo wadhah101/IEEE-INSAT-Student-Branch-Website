@@ -24,7 +24,7 @@ const HomeBanner: React.FC<IHomeBannerProps> = () => {
       <div className="relative z-20 flex flex-col min-h-screen text-white ">
         <div className="flex flex-col flex-grow w-full h-full c-container">
           <div />
-          <div className="flex flex-col justify-center flex-grow w-full md:items-start ">
+          <div className="flex flex-col justify-center flex-grow w-full pt-6 md:items-start ">
             {/* title block */}
             <HomeBannerWriting />
 
@@ -33,7 +33,7 @@ const HomeBanner: React.FC<IHomeBannerProps> = () => {
               <HomeBannerButtonBlock />
             </div>
           </div>
-          <div className="flex flex-col-reverse pb-4 md:pb-6">
+          <div className="flex flex-col-reverse pb-4">
             <div className="flex justify-center md:justify-start md:flex-row-reverse">
               <HomeBannerMediaIcons />
             </div>

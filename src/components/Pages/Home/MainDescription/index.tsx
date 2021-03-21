@@ -13,7 +13,7 @@ const HomeMainDescription: React.FC = () => {
       </div>
 
       <div className="mt-10 md:mt-20">
-        <HomeDescriptionVideo />
+        <HomeDescriptionVideo videoHref="" />
       </div>
     </div>
   );

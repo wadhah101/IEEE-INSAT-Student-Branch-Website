@@ -1,9 +1,14 @@
 import MyButton from '@/components/Shared/MyButton';
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { FiPlay } from 'react-icons/fi';
 
-interface IHomeDescriptionVideoProps {}
+const imageHref = `https://source.unsplash.com/random/1600x1100`;
+
+interface IHomeDescriptionVideoProps {
+  videoHref: string;
+}
 
 const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
   const openVideoModal = () => null;
@@ -13,7 +18,7 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
         <StaticImage
           className="relative shadow-xl "
           placeholder="dominantColor"
-          src="https://source.unsplash.com/random/1600x1100"
+          src={imageHref}
           alt="HomeVideo"
         />
         <div className="absolute top-0 left-0 grid w-full h-full text-6xl bg-black bg-opacity-25 place-items-center">
@@ -33,9 +38,11 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
           temporibus at dolor nihil
         </p>
         <div className="pb-2 mt-2 text-sm md:mt-6">
-          <MyButton empty colored>
-            WATCH ME
-          </MyButton>
+          <Link to="/about">
+            <MyButton empty colored>
+              WATCH ME
+            </MyButton>
+          </Link>
         </div>
       </figcaption>
     </figure>

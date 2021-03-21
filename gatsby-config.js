@@ -6,6 +6,13 @@ module.exports = {
     siteUrl: 'https://www.ieee-insat.com',
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'placeholders',
+        path: `${__dirname}/assets/placeholders/`,
+      },
+    },
     'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',

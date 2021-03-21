@@ -1,0 +1,7 @@
+.demo {
+  grid-template-rows: repeat(3, 17rem);
+  grid-template-areas:
+    'a b c '
+    'a d c'
+    'e d f';
+}
