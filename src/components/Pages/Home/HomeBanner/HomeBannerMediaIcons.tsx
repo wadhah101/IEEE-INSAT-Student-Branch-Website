@@ -24,7 +24,7 @@ const links = [
 
 const HomeBannerMediaIcons: React.FC<IHomeBannerMediaIconsProps> = () => {
   return (
-    <div className="inline-grid grid-flow-col-dense gap-4 text-3xl ">
+    <div className="inline-grid grid-flow-col-dense gap-4 text-2xl ">
       {links.map(({ Icon, href, title }) => (
         <a
           key={title}

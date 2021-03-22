@@ -36,22 +36,24 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   return (
     <div>
       <HomeBanner />
-      <div className="py-12 md:py-24 c-container">
-        <div className="mx-auto md:w-3/4 ">
+      <div className="py-12 c-container md:py-24 ">
+        <div className="mx-auto md:mb-16 md:w-3/4 ">
           <MainDescriptionWriting />
-          <div className="mt-10 md:mt-14">
-            <MainDescriptionStatistics />
-          </div>
         </div>
-        <div className="mt-10 md:mt-16">
+        <div className="mx-auto mb-16 ">
+          <MainDescriptionStatistics />
+        </div>
+
+        <div className="">
           <HomeDescriptionVideo videoHref="" />
         </div>
       </div>
+
       <ChapterGrid chapters={chapters} />
 
       <div className="py-10 c-container md:py-24 ">
         <HomeActivities data={a} />
-        <div className="mt-10 md:mt-20 ">
+        <div className="mt-10 md:mt-16 ">
           <HomeTestamonials data={testa} />
         </div>
       </div>

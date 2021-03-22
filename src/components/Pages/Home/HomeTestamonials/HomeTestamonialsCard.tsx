@@ -10,7 +10,7 @@ const HomeTestamonialsCard: React.FC<IHomeTestamonialsCardProps> = ({
   data: { description, owner, ownerPosition, ownerImage },
 }) => {
   return (
-    <div className="relative px-4 pt-6 pb-8 mx-auto border rounded-md shadow-sm md:w-3/5">
+    <div className="relative px-4 pt-6 pb-8 mx-auto border shadow-sm md:w-3/5">
       <div className="text-center">{description.description}</div>
       <div className="flex flex-col items-center mt-6 text-center ">
         <GatsbyImage
