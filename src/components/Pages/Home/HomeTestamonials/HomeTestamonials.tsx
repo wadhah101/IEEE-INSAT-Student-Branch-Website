@@ -14,21 +14,16 @@ interface IHomeTestamonialsProps {}
 
 const HomeTestamonials: React.FC<IHomeTestamonialsProps> = () => {
   const [current, setCurrent] = useState(0);
-  const [swiperReady, setSwiperReady] = useState(false);
   const [controlledSwiper, setControlledSwiper] = useState<SwiperCore>(null);
   useEffect(() => {
-    if (!swiperReady) return () => null;
+    if (!controlledSwiper) return () => null;
     // may god forgive me
     const t = setTimeout(() => {
       setCurrent((c) => (c + 1) % 4);
     }, changeIntervalMS);
+    controlledSwiper.slideTo(current, 1000, false);
     return () => clearTimeout(t);
-  }, [swiperReady, current]);
-
-  useEffect(() => {
-    if (swiperReady) controlledSwiper.slideTo(current, 1000, false);
-    return () => null;
-  }, [current, swiperReady]);
+  }, [controlledSwiper, current]);
 
   return (
     <div className="">
@@ -43,7 +38,6 @@ const HomeTestamonials: React.FC<IHomeTestamonialsProps> = () => {
           onSlideChange={({ activeIndex }) => setCurrent(() => activeIndex)}
           onSwiper={(e) => {
             setControlledSwiper(e);
-            setSwiperReady(true);
           }}
           className="relative mt-8 text-black text-opacity-70"
           spaceBetween={20}
@@ -61,6 +55,9 @@ const HomeTestamonials: React.FC<IHomeTestamonialsProps> = () => {
                 </div>
                 <div className="flex flex-col items-center mt-6 text-center ">
                   <StaticImage
+                    width={100}
+                    height={100}
+                    formats={[`webp`, `auto`]}
                     alt="person"
                     placeholder="blurred"
                     src="https://source.unsplash.com/random/100x100?person"
