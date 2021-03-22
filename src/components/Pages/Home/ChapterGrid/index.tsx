@@ -9,14 +9,10 @@ interface IindexProps {
   chapters: GatsbyTypes.ContentfulChapter[];
 }
 
-// TODO add this to model
-const chaptersOrder = [`RAS`, `CS`, `IAS`, `PES`, `EMBS`, `NPSS`];
-
+// TODO add on click expansion
 const ChapterGrid: React.FC<IindexProps> = ({ chapters }) => {
-  const data = chaptersOrder.map((e) =>
-    chapters.find((e1) => e1.acronym === e),
-  );
-  const wie = chapters.find((e1) => e1.acronym === `WIE`);
+  const data = chapters.filter((e) => e.acronym !== `WIE`);
+  const wie = chapters.find((e) => e.acronym === `WIE`);
 
   return (
     <div className="py-12 md:py-24 bg-sb-blue-main-500">

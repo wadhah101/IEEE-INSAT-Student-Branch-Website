@@ -7,10 +7,12 @@ import { navLinks } from './Header.data';
 interface IAppHeaderProps {}
 
 const AppHeader: React.FunctionComponent<IAppHeaderProps> = () => {
-  // TODO impliment logic later
   const location = useLocation();
-  const isFixed = location.pathname === `/`;
 
+  // TODO logic
+  const { isFixed } = navLinks.find((e) => e.link.to === location.pathname) ?? {
+    isFixed: false,
+  };
   //  Header state
   const [isTransparent, setIsTransparent] = React.useState(isFixed);
   const [isBig, setIsBig] = React.useState(isFixed);

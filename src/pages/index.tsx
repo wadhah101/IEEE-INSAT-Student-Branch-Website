@@ -51,11 +51,12 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
 
       <div className="py-10 c-container md:py-24 ">
         <HomeActivities data={a} />
-        <div className="mt-20">
-          <HomeTestamonials data={[...testa, ...testa, ...testa]} />
+        <div className="mt-10 md:mt-20 ">
+          <HomeTestamonials data={testa} />
         </div>
       </div>
       {/* awards  */}
+      {/* check our blog */}
       {/* contact us */}
       <div style={{ width: `30vh` }} />
     </div>
@@ -64,7 +65,7 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
 
 export const query = graphql`
   query MyQuery {
-    allContentfulTestamonial {
+    allContentfulTestamonial(sort: { order: ASC, fields: order }) {
       edges {
         node {
           id
@@ -125,7 +126,8 @@ export const query = graphql`
         }
       }
     }
-    allContentfulChapter {
+
+    allContentfulChapter(sort: { order: ASC, fields: order }) {
       edges {
         node {
           title

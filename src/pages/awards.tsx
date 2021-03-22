@@ -1,4 +1,7 @@
+import ComingSoon from '@/components/Pages/ComingSoon';
 import * as React from 'react';
 
-const AwardsPage: React.FunctionComponent = () => <div>enter</div>;
+const AwardsPage: React.FunctionComponent = () => {
+  return <ComingSoon />;
+};
 export default AwardsPage;
