@@ -1,3 +1,5 @@
+/* eslint-disable function-paren-newline */
+/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import HomeBanner from '@/components/Pages/Home/HomeBanner';
@@ -8,13 +10,29 @@ import MainDescriptionWriting from '@/components/Pages/Home/MainDescription/Main
 import HomeActivities from '@/components/Pages/Home/HomeActivities/HomeActivities';
 import HomeTestamonials from '@/components/Pages/Home/HomeTestamonials/HomeTestamonials';
 
+// hardcoded order
+// TODO add this to model
+const eventsSlugs = [
+  `spax`,
+  `pes-general-meeting`,
+  `ias-annual-meeting`,
+  `tunisia-entrepreneurship-summit`,
+  `star-program`,
+  `summer-school`,
+];
+
 const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
-  // const placeholders = data.allFile.edges;
-  const a = data.allContentfulActivity.edges
-    .map((e) => e.node)
+  const a = eventsSlugs
+    .map((e) =>
+      data.allContentfulActivity.edges
+        .map((e1) => e1.node)
+        .find((e1) => e1.slug === e),
+    )
     .map((e, ind) => ({ ...e, area: String.fromCharCode(97 + ind) }));
 
   const chapters = data.allContentfulChapter.edges.map((e) => e.node);
+
+  const testa = data.allContentfulTestamonial.edges.map((e) => e.node);
   return (
     <div>
       <HomeBanner />
@@ -30,28 +48,52 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
         </div>
       </div>
       <ChapterGrid chapters={chapters} />
-      {/* activities */}
-      {/* awards  */}
-      {/* temoiagnage */}
-      {/* contact us */}
+
       <div className="py-10 c-container md:py-24 ">
         <HomeActivities data={a} />
-        <div className="mt-16">
-          <HomeTestamonials />
+        <div className="mt-20">
+          <HomeTestamonials data={[...testa, ...testa, ...testa]} />
         </div>
       </div>
-
-      <div className="h-screen" />
+      {/* awards  */}
+      {/* contact us */}
+      <div style={{ width: `30vh` }} />
     </div>
   );
 };
 
 export const query = graphql`
   query MyQuery {
-    allContentfulActivity {
+    allContentfulTestamonial {
       edges {
         node {
           id
+          owner
+          description {
+            description
+          }
+          ownerPosition
+          ownerImage {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 100
+                  width: 100
+                  placeholder: DOMINANT_COLOR
+                  formats: [WEBP, AUTO]
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+
+    allContentfulActivity(filter: { inHomePage: { eq: true } }) {
+      edges {
+        node {
+          id
+          tags
           title
           slug
           featuredPicture {

@@ -12,7 +12,7 @@ interface IHomeActivitiesElementProps extends LinkHTMLAttributes<any> {
 
 const HomeActivitiesElement: React.FC<IHomeActivitiesElementProps> = ({
   // eslint-disable-next-line object-curly-newline
-  data: { title, slug, featuredPicture },
+  data: { title, slug, tags, featuredPicture },
   className,
   ...props
 }) => {
@@ -33,11 +33,13 @@ const HomeActivitiesElement: React.FC<IHomeActivitiesElementProps> = ({
         <div
           className={clsx(
             styles.appear,
-            `absolute flex z-10 transition-all ease-in-out duration-300 md:transform md:opacity-0 flex-col items-center left-0 w-full translate-y-10 text-white bottom-3 md:bottom-6`,
+            `absolute flex z-10 transition-all ease-in-out duration-300 md:transform md:opacity-0 flex-col items-center left-0 w-full md:translate-y-10 text-white bottom-3 md:bottom-6`,
           )}
         >
-          <h3 className="font-semibold tracking-wide ">{title}</h3>
-          <p className="text-sm">{[`demo`, `demo`].join(` / `)}</p>
+          <h3 className="font-semibold tracking-wide ">
+            {title.toUpperCase()}
+          </h3>
+          <p className="text-sm">{tags.slice(0, 2).join(` / `)}</p>
         </div>
       </div>
     </Link>

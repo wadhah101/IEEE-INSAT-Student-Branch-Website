@@ -4,22 +4,26 @@ import React, { useEffect, useState } from 'react';
 import SwiperCore, { Controller } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import clsx from 'clsx';
-import { StaticImage } from 'gatsby-plugin-image';
+import HomeTestamonialsCard from './HomeTestamonialsCard';
 
 SwiperCore.use([Controller]);
 
-const changeIntervalMS = 2500;
+interface IHomeTestamonialsProps {
+  data: GatsbyTypes.ContentfulTestamonial[];
+  changeIntervalMS?: number;
+}
 
-interface IHomeTestamonialsProps {}
-
-const HomeTestamonials: React.FC<IHomeTestamonialsProps> = () => {
+const HomeTestamonials: React.FC<IHomeTestamonialsProps> = ({
+  data,
+  changeIntervalMS = 3000,
+}) => {
   const [current, setCurrent] = useState(0);
   const [controlledSwiper, setControlledSwiper] = useState<SwiperCore>(null);
+  // may god forgive me
   useEffect(() => {
     if (!controlledSwiper) return () => null;
-    // may god forgive me
     const t = setTimeout(() => {
-      setCurrent((c) => (c + 1) % 4);
+      setCurrent((c) => (c + 1) % data.length);
     }, changeIntervalMS);
     controlledSwiper.slideTo(current, 1000, false);
     return () => clearTimeout(t);
@@ -27,57 +31,31 @@ const HomeTestamonials: React.FC<IHomeTestamonialsProps> = () => {
 
   return (
     <div className="">
-      <h3 className="text-3xl leading-snug text-center text-black text-opacity-75">
+      <h3 className="text-2xl leading-snug text-center text-black text-opacity-75 md:text-3xl">
         Some amazing people
         <br />
         We&apos;ve had the pleasure to work with.
       </h3>
       <div>
-        {/* TODO isloate */}
         <Swiper
           onSlideChange={({ activeIndex }) => setCurrent(() => activeIndex)}
           onSwiper={(e) => {
             setControlledSwiper(e);
           }}
-          className="relative mt-8 text-black text-opacity-70"
+          className="relative mt-6 text-black text-opacity-70"
           spaceBetween={20}
           controller={{ control: controlledSwiper }}
           slidesPerView={1}
         >
-          {new Array(4).fill(null).map((_, ind) => (
-            <SwiperSlide key={ind}>
-              <div className="relative px-4 pt-8 pb-10 mx-auto border rounded-md shadow-sm md:w-3/5">
-                <div className="text-center">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eligendi rem debitis, quo laborum autem voluptate possimus
-                  dolorum. Distinctio voluptatem incidunt iste assumenda,
-                  repellat officiis atque nostrum iure, nam, minima blanditiis.
-                </div>
-                <div className="flex flex-col items-center mt-6 text-center ">
-                  <StaticImage
-                    width={100}
-                    height={100}
-                    formats={[`webp`, `auto`]}
-                    alt="person"
-                    placeholder="blurred"
-                    src="https://source.unsplash.com/random/100x100?person"
-                    className="w-16 h-16 rounded-full"
-                  />
-                  <div className="mt-1 font-semibold ">
-                    <h4 className="text-black text-opacity-90">
-                      Dr. Habib Kamoun
-                    </h4>
-                    <p className="text-sm font-medium text-black text-opacity-60 ">
-                      IEEE Tunisia Section Chair 2018
-                    </p>
-                  </div>
-                </div>
-              </div>
+          {data.map((e) => (
+            <SwiperSlide key={e.id}>
+              <HomeTestamonialsCard data={e} />
             </SwiperSlide>
           ))}
+          {/* TODO isloate */}
           <div className="absolute left-0 w-full bottom-4">
             <div className="grid items-center justify-center grid-flow-col-dense gap-2 ">
-              {new Array(4).fill(null).map((_, ind) => (
+              {data.map((_, ind) => (
                 <div
                   key={ind}
                   className={clsx(

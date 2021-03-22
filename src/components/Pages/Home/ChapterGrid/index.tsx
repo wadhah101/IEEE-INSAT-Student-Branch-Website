@@ -9,6 +9,7 @@ interface IindexProps {
   chapters: GatsbyTypes.ContentfulChapter[];
 }
 
+// TODO add this to model
 const chaptersOrder = [`RAS`, `CS`, `IAS`, `PES`, `EMBS`, `NPSS`];
 
 const ChapterGrid: React.FC<IindexProps> = ({ chapters }) => {
