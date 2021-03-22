@@ -19,6 +19,7 @@ module.exports = {
     'gatsby-plugin-typegen',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sass',
     'gatsby-transformer-sharp',
     'gatsby-plugin-gatsby-cloud',
     // cms

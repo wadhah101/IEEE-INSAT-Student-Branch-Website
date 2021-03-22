@@ -25,14 +25,14 @@ const ChapterGrid: React.FC<IindexProps> = ({ chapters }) => {
       <div
         className={clsx(
           `grid items-center md:grid-cols-12 gap-3 justify-items-center c-container `,
-          style.gridAutoRaw,
+          style.mdGridAutoRaw,
         )}
       >
         {data.map((e, ind) => (
           // eslint-disable-next-line react/no-array-index-key
           <ChapterElement
             className={clsx(
-              `px-4 pt-4 pb-12 md:pt-6 md:pb-12`,
+              `px-4 pt-8 pb-12 md:pt-6 md:pb-12`,
               ind <= 2 ? `col-span-4 md:px-10 ` : `col-span-3 md:px-8`,
             )}
             data={e}
@@ -40,7 +40,7 @@ const ChapterGrid: React.FC<IindexProps> = ({ chapters }) => {
           />
         ))}
         <ChapterElement
-          className="col-span-3 px-4 pt-4 pb-12 md:px-14 md:pt-6 md:pb-12 "
+          className="col-span-3 px-6 pt-4 pb-12 md:px-14 md:pt-6 md:pb-12 "
           data={wie}
         />
       </div>

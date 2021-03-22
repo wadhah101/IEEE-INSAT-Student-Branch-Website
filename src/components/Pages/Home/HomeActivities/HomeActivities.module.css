@@ -1,7 +1,38 @@
-.demo {
-  grid-template-rows: repeat(3, 17rem);
-  grid-template-areas:
-    'a b c '
-    'a d c'
-    'e d f';
+@screen md {
+  .demo {
+    grid-template-rows: repeat(3, 17rem);
+    grid-template-areas:
+      'a b c'
+      'a d c'
+      'e d f';
+  }
+}
+
+@screen md {
+  .el::after {
+    opacity: 0;
+  }
+  .el:hover::after {
+    opacity: 1;
+  }
+
+  .el:hover .appear {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.el::after {
+  position: absolute;
+  transition: ease-in-out all 0.3s;
+  content: '';
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(34, 34, 34, 0.9) 100%
+  );
 }

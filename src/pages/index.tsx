@@ -8,13 +8,17 @@ import MainDescriptionWriting from '@/components/Pages/Home/MainDescription/Main
 import HomeActivities, {
   Meh,
 } from '@/components/Pages/Home/HomeActivities/HomeActivities';
+import faker from 'faker';
+import HomeTestamonials from '@/components/Pages/Home/HomeTestamonials/HomeTestamonials';
 
 const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
   const placeholders = data.allFile.edges;
 
-  const activitiesData: Meh[] = new Array(6).fill(null).map((e, ind) => ({
+  const activitiesData: Meh[] = new Array(6).fill(null).map((_, ind) => ({
+    title: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    tags: [faker.music.genre(), faker.music.genre()],
     file: placeholders[ind],
-    class: String.fromCharCode(97 + ind),
+    area: String.fromCharCode(97 + ind),
   }));
 
   const chapters = data.allContentfulChapter.edges.map((e) => e.node);
@@ -39,7 +43,11 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
       {/* contact us */}
       <div className="py-10 c-container md:py-24 ">
         <HomeActivities data={activitiesData} />
+        <div className="mt-16">
+          <HomeTestamonials />
+        </div>
       </div>
+
       <div className="h-screen" />
     </div>
   );

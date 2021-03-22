@@ -14,8 +14,12 @@
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
-  "plugins": ["react", "react-hooks", "jsx-a11y"],
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "plugins": ["react", "react-hooks", "jsx-a11y", "css-modules"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:css-modules/recommended"
+  ],
   "rules": {
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
