@@ -5,25 +5,20 @@ import React, { LinkHTMLAttributes } from 'react';
 import * as styles from './HomeActivities.module.css';
 
 // TODO replace with activity Model
-export interface Meh {
-  title: string;
-  tags: string[];
-  file: GatsbyTypes.FileEdge;
-}
 
 interface IHomeActivitiesElementProps extends LinkHTMLAttributes<any> {
-  data: Meh;
+  data: GatsbyTypes.ContentfulActivity;
 }
 
 const HomeActivitiesElement: React.FC<IHomeActivitiesElementProps> = ({
   // eslint-disable-next-line object-curly-newline
-  data: { title, tags, file },
+  data: { title, slug, featuredPicture },
   className,
   ...props
 }) => {
   return (
     <Link
-      to={`/activities/details/${title}`}
+      to={`/activities/details/${slug}`}
       title="link to activities"
       className={clsx(`flex items-stretch `, className)}
       {...props}
@@ -33,7 +28,7 @@ const HomeActivitiesElement: React.FC<IHomeActivitiesElementProps> = ({
           alt="ok"
           imgClassName="object-cover "
           className="w-full h-full"
-          image={getImage(file.node as any)}
+          image={getImage(featuredPicture.localFile as any)}
         />
         <div
           className={clsx(
@@ -42,7 +37,7 @@ const HomeActivitiesElement: React.FC<IHomeActivitiesElementProps> = ({
           )}
         >
           <h3 className="font-semibold tracking-wide ">{title}</h3>
-          <p className="text-sm">{tags.join(` / `)}</p>
+          <p className="text-sm">{[`demo`, `demo`].join(` / `)}</p>
         </div>
       </div>
     </Link>

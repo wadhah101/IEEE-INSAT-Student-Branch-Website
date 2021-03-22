@@ -5,21 +5,14 @@ import ChapterGrid from '@/components/Pages/Home/ChapterGrid';
 import HomeDescriptionVideo from '@/components/Pages/Home/MainDescription/HomeDescriptionVideo';
 import MainDescriptionStatistics from '@/components/Pages/Home/MainDescription/MainDescriptionStatistics';
 import MainDescriptionWriting from '@/components/Pages/Home/MainDescription/MainDescriptionWriting';
-import HomeActivities, {
-  Meh,
-} from '@/components/Pages/Home/HomeActivities/HomeActivities';
-import faker from 'faker';
+import HomeActivities from '@/components/Pages/Home/HomeActivities/HomeActivities';
 import HomeTestamonials from '@/components/Pages/Home/HomeTestamonials/HomeTestamonials';
 
 const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
-  const placeholders = data.allFile.edges;
-
-  const activitiesData: Meh[] = new Array(6).fill(null).map((_, ind) => ({
-    title: `${faker.name.firstName()} ${faker.name.lastName()}`,
-    tags: [faker.music.genre(), faker.music.genre()],
-    file: placeholders[ind],
-    area: String.fromCharCode(97 + ind),
-  }));
+  // const placeholders = data.allFile.edges;
+  const a = data.allContentfulActivity.edges
+    .map((e) => e.node)
+    .map((e, ind) => ({ ...e, area: String.fromCharCode(97 + ind) }));
 
   const chapters = data.allContentfulChapter.edges.map((e) => e.node);
   return (
@@ -42,7 +35,7 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
       {/* temoiagnage */}
       {/* contact us */}
       <div className="py-10 c-container md:py-24 ">
-        <HomeActivities data={activitiesData} />
+        <HomeActivities data={a} />
         <div className="mt-16">
           <HomeTestamonials />
         </div>
@@ -55,6 +48,28 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
 
 export const query = graphql`
   query MyQuery {
+    allContentfulActivity {
+      edges {
+        node {
+          id
+          title
+          slug
+          featuredPicture {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  height: 1000
+                  placeholder: DOMINANT_COLOR
+                  formats: [AUTO, WEBP]
+                  webpOptions: { quality: 95 }
+                )
+              }
+            }
+          }
+        }
+      }
+    }
+
     allFile(filter: { sourceInstanceName: { eq: "placeholders" } }) {
       edges {
         node {

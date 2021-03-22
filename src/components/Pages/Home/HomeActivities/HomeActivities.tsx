@@ -2,10 +2,10 @@ import clsx from 'clsx';
 import React from 'react';
 import * as styles from './HomeActivities.module.css';
 import 'swiper/swiper.scss';
-import HomeActivitiesElement, { Meh } from './HomeActivitiesElement';
+import HomeActivitiesElement from './HomeActivitiesElement';
 
 export interface IHomeActivitiesProps {
-  data: (Meh & { area: string })[];
+  data: (GatsbyTypes.ContentfulActivity & { area: string })[];
 }
 
 const HomeActivities: React.FC<IHomeActivitiesProps> = ({ data }) => {
@@ -17,8 +17,9 @@ const HomeActivities: React.FC<IHomeActivitiesProps> = ({ data }) => {
       <div
         className={clsx(`flex flex-col md:grid md:grid-cols-3 `, styles.demo)}
       >
+        {/* TODO change key with id */}
         {data.map((e) => (
-          <div style={{ gridArea: e.area }} key={e.area}>
+          <div style={{ gridArea: e.area }} key={e.id}>
             <HomeActivitiesElement className="w-full h-full" data={e} />
           </div>
         ))}
