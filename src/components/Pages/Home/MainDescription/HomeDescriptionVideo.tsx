@@ -18,7 +18,7 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
         <StaticImage
           className="relative shadow-xl "
           placeholder="dominantColor"
-          src={imageHref}
+          src="../../../../../assets/placeholders/people-l.jpg.jpg"
           alt="HomeVideo"
         />
         <div className="absolute top-0 left-0 grid w-full h-full text-6xl bg-black bg-opacity-25 place-items-center">
