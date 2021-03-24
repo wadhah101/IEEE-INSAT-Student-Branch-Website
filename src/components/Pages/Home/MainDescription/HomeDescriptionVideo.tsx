@@ -4,8 +4,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import { FiPlay } from 'react-icons/fi';
 
-const imageHref = `https://source.unsplash.com/random/1600x1100`;
-
 interface IHomeDescriptionVideoProps {
   videoHref: string;
 }
@@ -18,7 +16,7 @@ const HomeDescriptionVideo: React.FC<IHomeDescriptionVideoProps> = () => {
         <StaticImage
           className="relative shadow-xl "
           placeholder="dominantColor"
-          src="../../../../../assets/placeholders/people-l.jpg.jpg"
+          src="../../../../../assets/placeholders/people-l.jpg"
           alt="HomeVideo"
         />
         <div className="absolute top-0 left-0 grid w-full h-full text-6xl bg-black bg-opacity-25 place-items-center">
