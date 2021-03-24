@@ -17,6 +17,8 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
     area: String.fromCharCode(97 + ind),
   }));
 
+  const blogs = data.contentfulHomeBlog.data.map((e) => e);
+
   const chapters = data.contentfulHomeChapters.data.map((e) => e);
 
   const testa = data.allContentfulTestamonial.edges.map((e) => e.node);
@@ -48,7 +50,7 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
 
       <div className="py-24 bg-sb-gray-100 ">
         <div className="c-container">
-          <Homeblogs blogs={[]} />
+          <Homeblogs blogs={blogs} />
         </div>
       </div>
 
@@ -148,6 +150,33 @@ export const query = graphql`
         }
         acronym
         facebook
+      }
+    }
+
+    contentfulHomeBlog(slug: { eq: "main" }) {
+      id
+      data {
+        id
+        author
+        date
+        description {
+          raw
+        }
+        slug
+        tags
+        title
+        featuredPicture {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 800
+                height: 800
+                placeholder: DOMINANT_COLOR
+                formats: [AUTO, WEBP]
+              )
+            }
+          }
+        }
       }
     }
   }

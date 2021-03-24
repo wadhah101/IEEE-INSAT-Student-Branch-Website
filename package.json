@@ -22,10 +22,12 @@
     ]
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^14.1.2",
     "@tailwindcss/line-clamp": "^0.2.0",
     "@types/faker": "^5.1.7",
     "babel-preset-gatsby": "^1.1.0",
     "clsx": "^1.1.1",
+    "dayjs": "^1.10.4",
     "dotenv": "^8.2.0",
     "faker": "^5.4.0",
     "gatsby": "3.1.1",
