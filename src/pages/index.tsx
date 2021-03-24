@@ -9,28 +9,15 @@ import MainDescriptionStatistics from '@/components/Pages/Home/MainDescription/M
 import MainDescriptionWriting from '@/components/Pages/Home/MainDescription/MainDescriptionWriting';
 import HomeActivities from '@/components/Pages/Home/HomeActivities/HomeActivities';
 import HomeTestamonials from '@/components/Pages/Home/HomeTestamonials/HomeTestamonials';
-
-// hardcoded order
-// TODO add this to model
-const eventsSlugs = [
-  `spax`,
-  `pes-general-meeting`,
-  `ias-annual-meeting`,
-  `tunisia-entrepreneurship-summit`,
-  `star-program`,
-  `summer-school`,
-];
+import Homeblogs from '@/components/Pages/Home/HomeBlogs/Homeblogs';
 
 const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
-  const a = eventsSlugs
-    .map((e) =>
-      data.allContentfulActivity.edges
-        .map((e1) => e1.node)
-        .find((e1) => e1.slug === e),
-    )
-    .map((e, ind) => ({ ...e, area: String.fromCharCode(97 + ind) }));
+  const a = data.contentfulHomeActivity.data.map((e, ind) => ({
+    ...e,
+    area: String.fromCharCode(97 + ind),
+  }));
 
-  const chapters = data.allContentfulChapter.edges.map((e) => e.node);
+  const chapters = data.contentfulHomeChapters.data.map((e) => e);
 
   const testa = data.allContentfulTestamonial.edges.map((e) => e.node);
   return (
@@ -58,6 +45,13 @@ const HomePage: React.FC<PageProps<GatsbyTypes.Query>> = ({ data }) => {
         </div>
       </div>
       {/* awards  */}
+
+      <div className="py-24 bg-sb-gray-100 ">
+        <div className="c-container">
+          <Homeblogs blogs={[]} />
+        </div>
+      </div>
+
       {/* check our blog */}
       {/* contact us */}
       <div style={{ width: `30vh` }} />
@@ -92,71 +86,68 @@ export const query = graphql`
       }
     }
 
-    allContentfulActivity(filter: { inHomePage: { eq: true } }) {
-      edges {
-        node {
-          id
-          tags
-          title
-          slug
-          featuredPicture {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  height: 1000
-                  placeholder: DOMINANT_COLOR
-                  formats: [AUTO, WEBP]
-                  webpOptions: { quality: 95 }
-                )
-              }
+    contentfulHomeActivity(slug: { eq: "main" }) {
+      id
+      data {
+        id
+        tags
+        title
+        slug
+        featuredPicture {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                height: 1000
+                placeholder: DOMINANT_COLOR
+                formats: [AUTO, WEBP]
+                webpOptions: { quality: 95 }
+              )
             }
           }
         }
       }
     }
-
-    allFile(filter: { sourceInstanceName: { eq: "placeholders" } }) {
-      edges {
-        node {
-          childImageSharp {
-            gatsbyImageData(
-              width: 1200
-              placeholder: DOMINANT_COLOR
-              formats: [AUTO, WEBP]
-            )
-          }
-        }
-      }
-    }
-
-    allContentfulChapter(sort: { order: ASC, fields: order }) {
-      edges {
-        node {
-          title
+    # allFile(filter: { sourceInstanceName: { eq: "placeholders" } }) {
+    #   edges {
+    #     node {
+    #       childImageSharp {
+    #         gatsbyImageData(
+    #           width: 1200
+    #           placeholder: DOMINANT_COLOR
+    #           formats: [AUTO, WEBP]
+    #         )
+    #       }
+    #     }
+    #   }
+    # }
+    contentfulHomeChapters(slug: { eq: "main" }) {
+      id
+      data {
+        id
+        title
+        id
+        linkedin
+        site
+        accent
+        nature
+        logos {
           id
-          linkedin
-          site
-          accent
-          nature
-          logos {
-            id
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  width: 800
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP]
-                )
-              }
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                width: 800
+                placeholder: BLURRED
+                formats: [AUTO, WEBP]
+              )
             }
           }
-          description {
-            id
-            description
-          }
-          acronym
-          facebook
         }
+        description {
+          id
+          description
+        }
+        acronym
+        facebook
       }
     }
   }

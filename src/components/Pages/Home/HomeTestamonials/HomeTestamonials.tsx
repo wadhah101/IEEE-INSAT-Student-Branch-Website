@@ -5,6 +5,7 @@ import SwiperCore, { Controller } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import clsx from 'clsx';
 import HomeTestamonialsCard from './HomeTestamonialsCard';
+import SwiperPoints from './SwiperPoints';
 
 SwiperCore.use([Controller]);
 
@@ -52,19 +53,8 @@ const HomeTestamonials: React.FC<IHomeTestamonialsProps> = ({
               <HomeTestamonialsCard data={e} />
             </SwiperSlide>
           ))}
-          {/* TODO isloate */}
-          <div className="absolute left-0 w-full bottom-4">
-            <div className="grid items-center justify-center grid-flow-col-dense gap-2 ">
-              {data.map((_, ind) => (
-                <div
-                  key={ind}
-                  className={clsx(
-                    `w-2 h-2 duration-300 ease-in-out transition-colors rounded-full `,
-                    current === ind ? `bg-sb-blue-main-400` : `bg-sb-gray-400`,
-                  )}
-                />
-              ))}
-            </div>
+          <div className="absolute left-0 flex justify-center w-full bottom-3">
+            <SwiperPoints count={data.length} selected={current} />
           </div>
         </Swiper>
       </div>
