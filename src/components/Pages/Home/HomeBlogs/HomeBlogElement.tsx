@@ -1,6 +1,9 @@
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import React from 'react';
 import dayjs from 'dayjs';
+import clsx from 'clsx';
+import { Link } from 'gatsby';
+import * as styles from './HomeBlogsElement.module.css';
 
 interface IHomeBlogElementProps {
   data: GatsbyTypes.ContentfulBlog;
@@ -9,13 +12,18 @@ interface IHomeBlogElementProps {
 const HomeBlogElement: React.FC<IHomeBlogElementProps> = ({ data }) => {
   const humanDate = dayjs(data.date).format(`MMMM DD, YYYY`);
   return (
-    <div className="flex flex-col">
+    <Link
+      to={`/blogs/details/${data.slug}`}
+      className={clsx(`flex flex-col  `, styles.main)}
+    >
       <GatsbyImage
-        className="flex-grow object-cover "
+        className={clsx(`flex-grow object-cover overflow-hidden `, styles.pic)}
         alt={data.title}
         image={getImage(data.featuredPicture.localFile as any)}
       />
-      <h4 className="mt-6 text-2xl text-black text-opacity-70">{data.title}</h4>
+      <h4 className="mt-6 text-2xl text-black transition-colors duration-300 ease-in-out text-opacity-70">
+        {data.title}
+      </h4>
       <div className="flex items-center mt-3 text-sm font-medium text-black text-opacity-50 ">
         <p>{humanDate}</p>
         <div className="flex-grow " />
@@ -34,7 +42,7 @@ const HomeBlogElement: React.FC<IHomeBlogElementProps> = ({ data }) => {
       <p className="mt-4 text-sm text-black text-opacity-70 line-clamp-4">
         {data.description.raw}
       </p>
-    </div>
+    </Link>
   );
 };
 
