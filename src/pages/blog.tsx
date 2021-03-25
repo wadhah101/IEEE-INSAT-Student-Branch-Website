@@ -1,7 +1,7 @@
-import ComingSoon from '@/components/Pages/ComingSoon';
-import * as React from 'react';
+import ComingSoon from '@/components/Pages/ComingSoon'
+import * as React from 'react'
 
 const BlogPage: React.FunctionComponent = () => {
-  return <ComingSoon />;
-};
-export default BlogPage;
+    return <ComingSoon />
+}
+export default BlogPage

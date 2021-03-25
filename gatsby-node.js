@@ -18,6 +18,7 @@ const createBlogPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            slug
           }
         }
       }
@@ -25,7 +26,7 @@ const createBlogPages = async ({ graphql, actions }) => {
   `);
   result.data.allContentfulBlog.edges.forEach(({ node }) => {
     createPage({
-      path: `blogs/${node.id}`,
+      path: `blogs/${node.slug}`,
       component: path.resolve('./src/templates/blog-post.tsx'),
       context: {
         slug: node.id,
